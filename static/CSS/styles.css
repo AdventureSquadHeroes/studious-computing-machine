@@ -1,19 +1,18 @@
 body {
-    background-color: rgb(59, 65, 77);
+    background-color: rgb(222, 225, 230);
 }
 
 h1 {
-    color: antiquewhite;
+    font-family: 'Pacifico', cursive;
+    color: rgb(21, 22, 22);
+    text-align: left;
+}
+
+h2 {
+    margin-top: 5%;
     text-align: center;
 }
 
-.img {
-    size: 0cm;
-
-}   
-
-.container {
-    block-size: 150px;
-    padding: 0% 10%;
-    size: 100px;
+.title {
+    padding-top: 15%;
 }
