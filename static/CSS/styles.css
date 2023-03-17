@@ -1,0 +1,19 @@
+body {
+    background-color: rgb(59, 65, 77);
+}
+
+h1 {
+    color: antiquewhite;
+    text-align: center;
+}
+
+.img {
+    size: 0cm;
+
+}   
+
+.container {
+    block-size: 150px;
+    padding: 0% 10%;
+    size: 100px;
+}
