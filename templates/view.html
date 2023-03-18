@@ -1,0 +1,26 @@
+{% include "header.html" %} 
+
+<div class="recipe">
+    <div class="recipe-title">
+        <h2>{{ recipe['title'] }}</h2>
+    </div>
+    <div class="summary">
+        <img src="{{ recipe['image'] }}" alt="recipe image">
+    </div>
+    <div class="ingredients">
+        {% for ingredients in recipe['extendedIngredients'] %}
+        <li>{{ ingredients['originalName'] }}, {{ ingredients['amount']}} - {{ ingredients['unit']}}</li>
+        {% endfor %}
+    </div>
+    <div class="instructions">
+        <ol>
+            {% for steps in recipe['analyzedInstructions'][0]['steps'] %}
+            <li>{{ steps['step'] }}</li>
+            {% endfor %}
+        </ol>
+        
+    </div>
+</div>
+        
+
+{% include "footer.html" %}
