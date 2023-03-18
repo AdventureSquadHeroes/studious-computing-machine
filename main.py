@@ -15,7 +15,6 @@ def home():
         query = RecipeSearch(search_form.ingredients.data, search_form.cuisine.data, search_form.equipment.data)
         request = query.search()
         results = [items for items in request['results']]
-        print(results)
     return render_template('index.html', form=search_form, results=results)
 
 

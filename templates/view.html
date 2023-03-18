@@ -4,8 +4,8 @@
     <div class="recipe-title">
         <h2>{{ recipe['title'] }}</h2>
     </div>
-    <div class="summary">
-        <img src="{{ recipe['image'] }}" alt="recipe image">
+    <div>
+        <img class="dish-image" src="{{ recipe['image'] }}" alt="recipe image">
     </div>
     <div class="ingredients">
         {% for ingredients in recipe['extendedIngredients'] %}
@@ -18,7 +18,6 @@
             <li>{{ steps['step'] }}</li>
             {% endfor %}
         </ol>
-        
     </div>
 </div>
         
