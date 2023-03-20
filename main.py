@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for, flash
 from flask_bootstrap import Bootstrap
 from forms import SearchForm, EmailForm
 from api import RecipeSearch
@@ -38,6 +38,8 @@ def send_message():
                               email_form.body.data
                               )
         Contact.send_message(new_message)
+        flash("Message Sent")
+        return redirect(url_for("send_message"))
     return render_template("email.html", form=email_form)
 
 

@@ -18,6 +18,10 @@ h5 {
     margin: 0px 300px 50px;
 }
 
+p {
+    text-align: center;
+}
+
 .title {
     padding-top: 15%;
 }
@@ -63,8 +67,8 @@ h5 {
     margin-left: 12px;
 }
 
-.fa-pinterest {
-    color: red;
+.pinterest {
+    margin-top: 8px;
 }
 
 .fa-instagram {
