@@ -8,11 +8,15 @@
         </div>
     </div>
     {% if results: %}
+        <p>Results</p>
     {% for item in results: %}
     <div class="list">
-            <li><a href="view/{{ item['id'] }}">{{ item['title'] }}</a></li>
-            {% endfor %}
-            {% endif %}
+        <a href="view/{{ item['id'] }}">{{ item['title'] }}</a>
+        {% endfor %}
+        {% endif %}
     </div>
+    {% if not results: %}
+    <p>No results</p>
+    {% endif %}
 
 {% include "footer.html" %}

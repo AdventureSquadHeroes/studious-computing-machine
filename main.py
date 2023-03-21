@@ -13,9 +13,11 @@ def home():
     search_form = SearchForm()
     results = None
     if search_form.validate_on_submit():
-        query = RecipeSearch(search_form.ingredients.data, 
-                             search_form.cuisine.data, 
-                             search_form.equipment.data
+        query = RecipeSearch(search_form.cuisine.data,
+                             search_form.diet.data,
+                             search_form.equipment.data,
+                             search_form.ingredients.data,
+                             search_form.excluded_ingredients.data, 
                              )
         request = query.search()
         results = [items for items in request['results']]
