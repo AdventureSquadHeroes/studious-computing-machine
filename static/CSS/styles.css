@@ -43,6 +43,30 @@ h5 {
 .ingredients {
     text-align: left;
     margin: 50px 0px 50px 675px;
+    font-weight: lighter;
+    font-size: large;
+}
+
+.instructions {
     font-weight: bold;
     font-size: large;
+    text-align: left;
+    margin-left: 660px;
+    margin-right: 650px;
+}
+
+.dish-image {
+    border-radius: 30%;
+}
+
+.instruction-title {
+    margin-left: 12px;
+}
+
+.fa-pinterest {
+    color: red;
+}
+
+.fa-instagram {
+    color: blueviolet;
 }

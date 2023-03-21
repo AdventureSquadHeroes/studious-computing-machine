@@ -4,21 +4,45 @@
     <div class="recipe-title">
         <h2>{{ recipe['title'] }}</h2>
     </div>
-    <div class="summary">
-        <img src="{{ recipe['image'] }}" alt="recipe image">
+    <div>
+        <img class="dish-image" src="{{ recipe['image'] }}" alt="recipe image">
     </div>
     <div class="ingredients">
+        <h3>Ingredients</h3>
         {% for ingredients in recipe['extendedIngredients'] %}
-        <li>{{ ingredients['originalName'] }}, {{ ingredients['amount']}} - {{ ingredients['unit']}}</li>
+        <li>{{ ingredients['originalName'] }}, {{ ingredients['amount']}} {{ ingredients['unit']}}</li>
         {% endfor %}
     </div>
     <div class="instructions">
+        <h3 class="instruction-title">Instructions</h3>
         <ol>
             {% for steps in recipe['analyzedInstructions'][0]['steps'] %}
             <li>{{ steps['step'] }}</li>
             {% endfor %}
         </ol>
-        
+    </div>
+    <p>Share this recipe!</p>
+    <div class="btn-group" role="group">
+        <a href="https://www.facebook.com/sharer.php?u={{ request.url }}&t={{ title }}" target="_blank">
+            <span class="fa-stack fa-xl">
+                <i class="fa-brands fa-facebook"></i>
+            </span>
+        </a>
+        <a href="https://twitter.com/intent/tweet?url={{ request.url }}&text={{ title }}" target="_blank">
+            <span class="fa-stack fa-xl">
+                <i class="fa-brands fa-twitter"></i>
+            </span>
+          </a>
+          <a href="https://twitter.com/intent/tweet?url={{ request.url }}&text={{ title }}" target="_blank">
+            <span class="fa-stack fa-xl">
+                <i class="fa-brands fa-pinterest"></i>
+            </span>
+          </a>
+            <a href="https://twitter.com/intent/tweet?url={{ request.url }}&text={{ title }}" target="_blank">
+                <span class="fa-stack fa-xl">
+                    <i class="fa-brands fa-instagram"></i>
+                </span>
+            </a>
     </div>
 </div>
         
