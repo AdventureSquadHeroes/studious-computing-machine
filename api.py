@@ -6,10 +6,9 @@ RECIPE_API = "https://api.spoonacular.com/recipes/"
 
 class RecipeSearch:
     
-    def __init__(self, cuisine=None, diet=None, intolerances=None, equipment=None, ingredients=None, excluded_ingredients=None):
+    def __init__(self, cuisine=None, diet=None, equipment=None, ingredients=None, excluded_ingredients=None):
         self.cuisine = cuisine
         self.diet = diet
-        self.intolerances = intolerances
         self.ingredients = ingredients
         self.excluded_ingredients = excluded_ingredients
         self.equipment = equipment

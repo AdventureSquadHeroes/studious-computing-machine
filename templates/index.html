@@ -9,14 +9,18 @@
     </div>
     {% if results: %}
         <p>Results</p>
-    {% for item in results: %}
-    <div class="list">
-        <a href="view/{{ item['id'] }}">{{ item['title'] }}</a>
+        {% for item in results: %}
+        <div class="list">
+            <a href="view/{{ item['id'] }}">{{ item['title'] }}</a>
         {% endfor %}
-        {% endif %}
-    </div>
-    {% if not results: %}
-    <p>No results</p>
     {% endif %}
+        </div>
+    {% with messages = get_flashed_messages() %} 
+        {% if messages %} 
+            {% for message in messages %} 
+                <p>{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
 
 {% include "footer.html" %}

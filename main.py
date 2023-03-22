@@ -21,6 +21,8 @@ def home():
                              )
         request = query.search()
         results = [items for items in request['results']]
+        if len(results) < 1:
+            flash("No recipes match that criteria")
     return render_template('index.html', form=search_form, results=results)
 
 
