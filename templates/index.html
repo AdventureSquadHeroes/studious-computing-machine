@@ -8,11 +8,19 @@
         </div>
     </div>
     {% if results: %}
-    {% for item in results: %}
-    <div class="list">
-            <li><a href="view/{{ item['id'] }}">{{ item['title'] }}</a></li>
+        <p>Results</p>
+        {% for item in results: %}
+        <div class="list">
+            <a href="view/{{ item['id'] }}">{{ item['title'] }}</a>
+        {% endfor %}
+    {% endif %}
+        </div>
+    {% with messages = get_flashed_messages() %} 
+        {% if messages %} 
+            {% for message in messages %} 
+                <p>{{ message }}</p>
             {% endfor %}
-            {% endif %}
-    </div>
+        {% endif %}
+    {% endwith %}
 
 {% include "footer.html" %}

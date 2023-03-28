@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for, flash
 from flask_bootstrap import Bootstrap
 from forms import SearchForm, EmailForm
 from api import RecipeSearch
@@ -13,12 +13,16 @@ def home():
     search_form = SearchForm()
     results = None
     if search_form.validate_on_submit():
-        query = RecipeSearch(search_form.ingredients.data, 
-                             search_form.cuisine.data, 
-                             search_form.equipment.data
+        query = RecipeSearch(search_form.cuisine.data,
+                             search_form.diet.data,
+                             search_form.equipment.data,
+                             search_form.ingredients.data,
+                             search_form.excluded_ingredients.data, 
                              )
         request = query.search()
         results = [items for items in request['results']]
+        if len(results) < 1:
+            flash("No recipes match that criteria")
     return render_template('index.html', form=search_form, results=results)
 
 
@@ -38,6 +42,8 @@ def send_message():
                               email_form.body.data
                               )
         Contact.send_message(new_message)
+        flash("Message Sent")
+        return redirect(url_for("send_message"))
     return render_template("email.html", form=email_form)
 
 

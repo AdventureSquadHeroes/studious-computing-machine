@@ -1,5 +1,8 @@
 import smtplib
 
+EMAIL = "adventuresquadmessenger@gmail.com"
+PWD = "nuvncldderxibazw"
+
 class Contact:
 
     def __init__(self, name, email, body, subject=None):
@@ -10,11 +13,11 @@ class Contact:
 
 
     def send_message(self):
-        with smtplib.SMTP("email") as connection:
+        with smtplib.SMTP("smtp.gmail.com") as connection:
             connection.starttls()
-            connection.login(user="", password="")
+            connection.login(user=EMAIL, password=PWD)
             connection.sendmail(
-                from_addr="",
-                to_addrs="",
-                msg=f"{self.subject}\n\n{self.name}\n{self.email}\n{self.body}"
+                from_addr=EMAIL,
+                to_addrs="AdventureSquadHeros@gmail.com",
+                msg=f"{self.name}\n{self.email}\n{self.body}\n{self.subject}"
             )

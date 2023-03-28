@@ -6,9 +6,11 @@ RECIPE_API = "https://api.spoonacular.com/recipes/"
 
 class RecipeSearch:
     
-    def __init__(self, ingredients=None, cuisine=None, equipment=None):
-        self.ingredients = ingredients
+    def __init__(self, cuisine=None, diet=None, equipment=None, ingredients=None, excluded_ingredients=None):
         self.cuisine = cuisine
+        self.diet = diet
+        self.ingredients = ingredients
+        self.excluded_ingredients = excluded_ingredients
         self.equipment = equipment
 
     def search(self):
@@ -17,9 +19,11 @@ class RecipeSearch:
         }
         params = {
             "cuisine": self.cuisine,
-            "includeIngredients": self.ingredients,
+            "diet": self.diet,
             "equipment": self.equipment,
-            "number": 25
+            "includeIngredients": self.ingredients,
+            "excludeIngredients": self.excluded_ingredients,
+            "number": 50
         }
         req = requests.get(SEARCH_API, params=params, headers=header)
         req.raise_for_status()
