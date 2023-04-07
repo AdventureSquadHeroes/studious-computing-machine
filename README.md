@@ -1,6 +1,6 @@
 # Recipe Website
 
-This repository contains a Python application that generates recipes based on ingredients or effects of herbs. It utilizes the `https://api.spoonacular.com` API to fetch recipes and provide the user with a list of recipes that they can try out.
+This repository contains a Python application that generates recipes based on ingredients, cuisine, type of cooking equipment, and diet. It utilizes the `https://api.spoonacular.com` API to fetch recipes and provide the user with a list of recipes that they can try out.
 
 ## Requirements
 
