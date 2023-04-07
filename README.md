@@ -4,25 +4,24 @@ This repository contains a Python application that generates recipes based on in
 
 ## Requirements
 
-- Python 3.6 or higher
-- `requests` library (`pip install requests`)
-- `dotenv` library (`pip install python-dotenv`)
+- Docker
 
 ## Installation
 
 1. Clone the repository to your local machine.
-2. Navigate to the repository directory and create a virtual environment using `python3 -m venv env`.
-3. Activate the virtual environment using `source env/bin/activate`.
-4. Install the required libraries using `pip install -r requirements.txt`.
-5. Create a `.env` file in the root directory and add your Spoonacular API key using the format `API_KEY=your_api_key_here`.
+2. Navigate to the repository directory.
+3. Create a `.env` file in the root directory and add your Spoonacular API key using the format `API_KEY=your_api_key_here`.
+4. Build the Docker image using the command `docker build -t my-flask-app .`.
 
 ## Usage
 
-1. Run the application by running `python main.py` in your terminal.
-2. The application will prompt you to enter ingredients or effects of herbs that you would like to use in your recipe.
-3. Enter the ingredients or effects separated by commas and press enter.
-4. The application will then fetch a list of recipes that match your input and display them in the terminal.
-5. Choose a recipe by entering its index and the application will display the recipe details, including the ingredients and instructions.
+1. Run the application in a Docker container using the command `docker run -d -p 5000:5000 my-flask-app`.
+2. Open your web browser and navigate to `http://localhost:5000`.
+3. The application will prompt you to enter ingredients or effects of herbs that you would like to use in your recipe.
+4. Enter the ingredients or effects separated by commas and click the "Search" button.
+5. The application will then fetch a list of recipes that match your input and display them on the page.
+6. Choose a recipe by clicking its title and the application will display the recipe details, including the ingredients and instructions.
+7. To stop the Docker container, use the command `docker stop [CONTAINER ID]`.
 
 ## Contributing
 
